@@ -1,0 +1,21 @@
+<div class="main">
+  <p>Veuillez saissir le montant dont vous souhaitez obtenir la monnaie :</p>
+  <form>
+    <div class="row">
+      <input type="number" name="amount" [(ngModel)]="amount" (ngModelChange)="change()" />
+    </div>
+  </form>
+  <br />
+  <div class="row">
+    <div *ngIf="!valid">
+      <p>Impossible de rendre la monnaie pour {{ amount }}!</p>
+    </div>
+    <div *ngIf="valid">
+      <ul>
+        <li>Nombre de billet de 10 Euro : {{ bill10 }}</li>
+        <li>Nombre de billet de 5 Euro : {{ bill5 }}</li>
+        <li>Nombre de pièce de 2 Euro : {{ coin2 }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
